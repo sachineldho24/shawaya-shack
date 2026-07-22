@@ -1,0 +1,11 @@
+{
+  "name": "shawaya-shack-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "dev": "node server.mjs",
+    "check": "node --check app.js"
+  }
+}

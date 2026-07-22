@@ -1,0 +1,98 @@
+:root {
+  --motion-fast: 160ms;
+  --motion-ui: 240ms;
+  --motion-reveal: 560ms;
+  --motion-hero: 760ms;
+  --motion-stagger: 60ms;
+  --motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --motion-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Content stays visible until JavaScript enables progressive enhancement. */
+.motion-ready [data-motion="reveal"] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity var(--motion-reveal) var(--motion-ease-out),
+    transform var(--motion-reveal) var(--motion-ease-out);
+}
+
+.motion-ready [data-motion="mask"] {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0 round var(--radius-image, 14px));
+  transform: translate3d(0, 16px, 0);
+  transition:
+    clip-path var(--motion-hero) var(--motion-ease-in-out),
+    opacity 320ms var(--motion-ease-out),
+    transform var(--motion-hero) var(--motion-ease-out);
+}
+
+.motion-ready [data-motion="scale"] {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 320ms var(--motion-ease-out),
+    transform 420ms var(--motion-ease-out);
+}
+
+.motion-ready [data-motion][data-inview="true"] {
+  opacity: 1;
+  clip-path: inset(0 0 0 0 round var(--radius-image, 14px));
+  transform: none;
+}
+
+.motion-ready [data-motion-group] > [data-motion]:nth-child(2) {
+  transition-delay: calc(var(--motion-stagger) * 1);
+}
+
+.motion-ready [data-motion-group] > [data-motion]:nth-child(3) {
+  transition-delay: calc(var(--motion-stagger) * 2);
+}
+
+.motion-ready [data-motion-group] > [data-motion]:nth-child(4) {
+  transition-delay: calc(var(--motion-stagger) * 3);
+}
+
+.motion-ready [data-motion-group] > [data-motion]:nth-child(5) {
+  transition-delay: calc(var(--motion-stagger) * 4);
+}
+
+.motion-ready [data-motion-group] > [data-motion]:nth-child(6) {
+  transition-delay: calc(var(--motion-stagger) * 5);
+}
+
+.pressable {
+  transition:
+    transform 140ms var(--motion-ease-out),
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.pressable:active { transform: scale(0.97); }
+
+.motion-image {
+  transform: scale(1);
+  transition: transform 480ms var(--motion-ease-in-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .motion-image-trigger:hover .motion-image { transform: scale(1.025); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  [data-motion],
+  [data-motion] > *,
+  .motion-image,
+  .pressable {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}

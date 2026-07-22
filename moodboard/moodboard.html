@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shawaya Shack — Firehouse Editorial Mood Board</title>
+  <style>
+    :root {
+      --flame: #ff3803;
+      --action: #d83a0a;
+      --gold: #eaa300;
+      --char: #1a0f0a;
+      --smoke: #6d625c;
+      --ash: #d9cfc7;
+      --cream: #f8f3ed;
+      --paper: #ffffff;
+      --display: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      --body: "Segoe UI", Arial, sans-serif;
+      --mono: Consolas, "Courier New", monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 1600px;
+      height: 1100px;
+      overflow: hidden;
+      background: var(--char);
+    }
+
+    body { font-family: var(--body); }
+
+    .board {
+      position: relative;
+      width: 1600px;
+      height: 1100px;
+      overflow: hidden;
+      color: var(--char);
+      background:
+        linear-gradient(rgb(26 15 10 / 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(26 15 10 / 0.028) 1px, transparent 1px),
+        var(--cream);
+      background-size: 32px 32px;
+    }
+
+    .topbar {
+      height: 92px;
+      padding: 0 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--char);
+      color: var(--cream);
+    }
+
+    .kicker {
+      color: var(--flame);
+      font: 700 12px/1 var(--mono);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .top-title {
+      margin-top: 7px;
+      font: 400 30px/.95 var(--display);
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    .index {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: var(--ash);
+      font: 700 12px/1 var(--mono);
+      letter-spacing: .12em;
+    }
+
+    .index::before {
+      content: "";
+      width: 72px;
+      height: 2px;
+      background: var(--flame);
+    }
+
+    .grid {
+      position: absolute;
+      inset: 124px 56px 56px;
+      display: grid;
+      grid-template-columns: 900px 1fr;
+      grid-template-rows: 478px 408px;
+      gap: 24px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--paper);
+      box-shadow: 0 16px 46px rgb(26 15 10 / 0.12);
+    }
+
+    .hero img,
+    .photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgb(10 7 4 / .76) 0%, rgb(10 7 4 / .2) 58%, transparent 82%);
+    }
+
+    .hero-copy {
+      position: absolute;
+      z-index: 2;
+      left: 40px;
+      bottom: 34px;
+      color: var(--cream);
+    }
+
+    .hero-copy .micro {
+      margin-bottom: 14px;
+      color: #ffb9a8;
+      font: 700 11px/1 var(--mono);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy h1 {
+      margin: 0;
+      max-width: 480px;
+      font: 400 84px/.82 var(--display);
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+
+    .hero-copy h1 span { color: var(--flame); }
+
+    .hero-number {
+      position: absolute;
+      z-index: 2;
+      right: 30px;
+      top: 28px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgb(248 243 237 / .45);
+      border-radius: 50%;
+      color: var(--cream);
+      font: 700 12px/1 var(--mono);
+    }
+
+    .brand-stack {
+      display: grid;
+      grid-template-rows: 278px 176px;
+      gap: 24px;
+    }
+
+    .logo-panel {
+      position: relative;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      align-items: center;
+      padding: 26px 30px;
+      background: var(--paper);
+      border: 1px solid rgb(26 15 10 / .08);
+    }
+
+    .logo-panel img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+    }
+
+    .logo-words {
+      padding-left: 26px;
+      border-left: 1px solid var(--ash);
+    }
+
+    .logo-words strong {
+      display: block;
+      font: 400 42px/.9 var(--display);
+      text-transform: uppercase;
+    }
+
+    .logo-words span {
+      display: block;
+      margin-top: 16px;
+      color: var(--smoke);
+      font: 700 11px/1.5 var(--mono);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .palette {
+      padding: 18px 20px 16px;
+      background: var(--char);
+      color: var(--cream);
+    }
+
+    .palette-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font: 700 10px/1 var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 7px;
+    }
+
+    .swatch {
+      height: 104px;
+      padding: 10px 8px;
+      display: flex;
+      align-items: flex-end;
+      border-radius: 10px;
+      color: var(--cream);
+      font: 700 9px/1 var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .swatch.cream { color: var(--char); }
+    .swatch.gold { color: var(--char); }
+
+    .bottom-gallery {
+      display: grid;
+      grid-template-columns: 420px 456px;
+      gap: 24px;
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgb(10 6 3 / .86));
+    }
+
+    .photo-label {
+      position: absolute;
+      z-index: 2;
+      left: 28px;
+      right: 28px;
+      bottom: 24px;
+      color: var(--cream);
+    }
+
+    .photo-label small {
+      display: block;
+      margin-bottom: 9px;
+      color: #ffad98;
+      font: 700 10px/1 var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .photo-label strong {
+      font: 400 38px/.95 var(--display);
+      text-transform: uppercase;
+    }
+
+    .price {
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      right: 20px;
+      padding: 10px 12px;
+      background: var(--flame);
+      color: var(--paper);
+      font: 700 12px/1 var(--mono);
+    }
+
+    .right-bottom {
+      display: grid;
+      grid-template-rows: 260px 124px;
+      gap: 24px;
+    }
+
+    .process img { object-position: 50% 62%; }
+
+    .type-panel {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr;
+      align-items: center;
+      gap: 24px;
+      padding: 20px 24px;
+      border-radius: 18px;
+      background: var(--char);
+      color: var(--cream);
+      overflow: hidden;
+    }
+
+    .type-display {
+      font: 400 50px/.82 var(--display);
+      letter-spacing: -.01em;
+      text-transform: uppercase;
+    }
+
+    .type-display span { color: var(--flame); }
+
+    .type-notes {
+      padding-left: 20px;
+      border-left: 1px solid rgb(248 243 237 / .25);
+      color: var(--ash);
+      font: 700 10px/1.7 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .edge-label {
+      position: absolute;
+      left: 11px;
+      bottom: 56px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      color: var(--smoke);
+      font: 700 9px/1 var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .08;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+  </style>
+</head>
+<body>
+  <main class="board" aria-label="Shawaya Shack website mood board">
+    <header class="topbar">
+      <div>
+        <div class="kicker">Shawaya Shack / Website mood board</div>
+        <div class="top-title">Firehouse Editorial</div>
+      </div>
+      <div class="index">01 / Brand world</div>
+    </header>
+
+    <section class="grid">
+      <article class="panel hero">
+        <img src="../assets/images/hero-fire-grilled-shawaya.webp" alt="Whole masala shawaya chicken beside a charcoal grill">
+        <div class="hero-copy">
+          <div class="micro">Traditional masala · Premium fire</div>
+          <h1>Flame.<br><span>Masala.</span><br>Soul.</h1>
+        </div>
+        <div class="hero-number">SS / 01</div>
+      </article>
+
+      <aside class="brand-stack">
+        <div class="panel logo-panel">
+          <img src="../assets/images/shawaya-shack-logo.png" alt="Shawaya Shack Restaurant logo">
+          <div class="logo-words">
+            <strong>Authentic<br>by fire.</strong>
+            <span>Bold · tactile · generous<br>Made to share</span>
+          </div>
+        </div>
+
+        <div class="panel palette">
+          <div class="palette-title"><span>Palette / heat map</span><span>05 tones</span></div>
+          <div class="swatches">
+            <div class="swatch" style="background:#ff3803">Flame<br>#FF3803</div>
+            <div class="swatch" style="background:#d83a0a">Action<br>#D83A0A</div>
+            <div class="swatch gold" style="background:#eaa300">Ember<br>#EAA300</div>
+            <div class="swatch" style="background:#1a0f0a;border:1px solid #54443b">Char<br>#1A0F0A</div>
+            <div class="swatch cream" style="background:#f8f3ed">Cream<br>#F8F3ED</div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="bottom-gallery">
+        <article class="panel photo">
+          <img src="../assets/images/family-shawaya-feast.webp" alt="Family-style shawaya feast">
+          <div class="photo-label">
+            <small>Occasion photography</small>
+            <strong>Share the fire</strong>
+          </div>
+        </article>
+
+        <article class="panel photo">
+          <img src="../assets/images/signature-half-shawaya.webp" alt="Signature shawaya plate with rice and garlic sauce">
+          <div class="price">Signature / 01</div>
+          <div class="photo-label">
+            <small>Product photography</small>
+            <strong>Deep flavor</strong>
+          </div>
+        </article>
+      </div>
+
+      <div class="right-bottom">
+        <article class="panel photo process">
+          <img src="../assets/images/traditional-masala-preparation-v2.webp" alt="Traditional masala being rubbed onto chicken beside a grill">
+          <div class="photo-label">
+            <small>Process / craft</small>
+            <strong>Made by hand</strong>
+          </div>
+        </article>
+
+        <div class="type-panel">
+          <div class="type-display">Slow heat.<br><span>Deep flavor.</span></div>
+          <div class="type-notes">Anton / display<br>DM Sans / body<br>Space Mono / labels</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="edge-label">Authentic masala shawaya · visual language 2026</div>
+    <div class="grain"></div>
+  </main>
+</body>
+</html>

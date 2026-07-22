@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Shawaya Motion Site"
+  short_description: "Build cinematic food-editorial web motion"
+  default_prompt: "Use $build-shawaya-motion-site to implement the Shawaya Shack website with cinematic food imagery and polished motion."

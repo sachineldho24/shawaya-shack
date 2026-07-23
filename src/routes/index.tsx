@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import heroDesktop from "../../assets/images/hero-shawaya-realistic.webp";
-import heroMobile from "../../assets/images/hero-fire-grilled-shawaya-mobile.webp";
+import heroDesktop from "../../assets/images/hero-shawaya-four-tine.webp";
+import heroMobile from "../../assets/images/hero-shawaya-four-tine-mobile.webp";
 import logo from "../../assets/images/shawaya-shack-logo.png";
 import spiceMarket from "../../assets/images/spice-market.jpg";
 import { MenuSection } from "../components/MenuSection";
@@ -36,12 +36,14 @@ function HomePage() {
 
           <figure className="hero-media">
             <picture>
-              <source media="(max-width: 40rem)" srcSet={heroMobile} />
+              <source media="(max-width: 47.99rem)" srcSet={heroMobile} />
               <img
                 src={heroDesktop}
                 width="1762"
                 height="892"
-                alt="Golden masala shawaya being carved beside a live fire."
+                fetchPriority="high"
+                decoding="async"
+                alt="Golden masala shawaya being carved with a four-tine fork beside a live fire."
               />
             </picture>
             <span className="hero-seal">

@@ -224,6 +224,7 @@ p {
 }
 
 .hero-media > picture > img {
+  height: auto;
   aspect-ratio: 1.975 / 1;
   border-radius: 0.875rem;
   object-fit: cover;

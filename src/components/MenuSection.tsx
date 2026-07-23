@@ -11,7 +11,6 @@ export function MenuSection() {
     <section className="menu-section" id="menu" aria-labelledby="menu-title">
       <div className="menu-shell">
         <header className="menu-heading">
-          <p>Menu</p>
           <h2 id="menu-title">Shawaya Shack Menu</h2>
         </header>
 

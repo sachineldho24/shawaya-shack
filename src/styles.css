@@ -270,17 +270,8 @@ p {
   text-align: center;
 }
 
-.menu-heading p {
-  margin-bottom: 0.65rem;
-  color: #ff8a65;
-  font-family: var(--font-label);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .menu-heading h2 {
+  color: var(--flame);
   font-family: var(--font-display);
   font-size: clamp(2.25rem, 6.5vw, 3.35rem);
   font-weight: 400;

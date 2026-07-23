@@ -25,8 +25,12 @@ function HomePage() {
           <div className="hero-copy">
             <p>Traditional masala · Premium fire</p>
             <h1 id="hero-title">
-              <span>Built for the Flame.</span>
-              <span>Made for the Table.</span>
+              <span>
+                Built for <span className="hero-accent">the Flame</span>
+              </span>
+              <span>
+                Made for <span className="hero-accent">the Table</span>
+              </span>
             </h1>
           </div>
 

@@ -1,11 +1,27 @@
 {
   "name": "shawaya-shack-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-static.mjs",
-    "dev": "node server.mjs",
-    "check": "node --check app.js"
+    "dev": "vite dev --config vite.dev.config.ts",
+    "build": "vite build",
+    "check": "tsc --noEmit",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "^1.170.18",
+    "@tanstack/react-start": "^1.168.32",
+    "nitro": "^3.0.260610-beta",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "typescript": "^7.0.2",
+    "vite": "^8.1.5"
   }
 }

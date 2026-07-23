@@ -1,6 +1,6 @@
 # Shawaya Shack website
 
-A mobile-first, dependency-free restaurant showcase built from the project logo, food imagery, and `design.md` direction.
+A mobile-first TanStack Start and React restaurant site built from the project logo, food imagery, and `design.md` direction.
 
 ## Run locally
 
@@ -16,8 +16,13 @@ Open `http://127.0.0.1:4173`.
 npm run build
 ```
 
-The production-ready static site is written to `dist/`. Vercel uses the settings in `vercel.json` to run this build and publish only that directory.
+TanStack Start creates the production server and client output through Vite and Nitro. Vercel detects the TanStack Start framework preset from `vercel.json`.
 
-## Ordering flow
+## Source structure
 
-Visitors can assemble a plate request, change quantities, and share or copy the request through their preferred app. Prices, location, hours, and a direct checkout or WhatsApp destination should be added only after the restaurant confirms those business details.
+- `src/routes/index.tsx` — landing page route
+- `src/components/MenuSection.tsx` — menu presentation
+- `src/data/menu.ts` — menu items and prices
+- `src/styles.css` — brand and responsive styles
+
+The Instagram destination is configured in the header, conversion band, and footer. Address, hours, and direct ordering should be added only after the restaurant confirms them.
